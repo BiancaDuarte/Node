@@ -1,8 +1,9 @@
 var express = required('express');
 var router = express.Router();
 
-var index  = required('./router/index');
+router.get('/', function (req, res){
+	res.json({'msg':'seja bem vindo'});
 
-router.use(index);
+});
 
 module.exports = router;
