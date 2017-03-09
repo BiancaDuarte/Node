@@ -1,7 +1,7 @@
-var express = required('express');
+var express = require('express');
 var router = express.Router();
 
-var index  = required('./routes/index');
+var index  = require('./routes/index');
 
 router.use(index);
 
