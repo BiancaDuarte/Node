@@ -15,7 +15,7 @@ module.exports = {
 		fs.writeFile(__dirname + "/../"+"db/users.json", dataJson, function(err, data){
 			if(err)
 				return console.log(err);
-			res.json({'msg': 'Usuário inserido com sucesso!'});
+			res.end('Usuário inserido com sucesso!');
 
 		});
 	},

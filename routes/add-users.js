@@ -9,8 +9,8 @@ router.post('/add-users', function (req, res){
 	file.read(function(data){
 		var params = req.query;
 		var id=0;
-		id= data.length + 1;
 		var naorepete=file.check(params, data)
+		id= data.length + 1;
 
 			Object.defineProperty(params, "id", {
  				get: function (){ 
