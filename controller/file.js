@@ -21,11 +21,12 @@ module.exports = {
 	},
 
 	check: function(params, data){
-
 		var naorepete=0;
 		 for(var i=0;i<data.length;i++){
-        if(data[i].name.toLowerCase()===params.toLowerCase()){naorepete=1;}
-        return naorepete;
+       		if(data[i].name.toLowerCase()===params.name.toLowerCase()){
+       			naorepete=1;
+       		}
 		}
+        return naorepete;
 	}
 }

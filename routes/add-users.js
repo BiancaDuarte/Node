@@ -8,15 +8,18 @@ router.post('/add-users', function (req, res){
 
 	file.read(function(data){
 		var params = req.query;
+		var naorepete=file.check(params, data)
+		
+		Object.defineProperty(obj, "id", {
+  			get: function () { return id; },
+  			set: function (value) { id = value; },
+ 			 enumerable: true
+			});
 
-
-		naorepete=file.check(params, data);
-			console.log(naorepete);
 			if(naorepete==0){
-
-				var dataJson = JSON.stringify(data);
 				data.push(params);
-				file.write(dataJson, res);
+				var dataJson = JSON.stringify(data);
+				file.write(dataJson,res);
 			}
 
 			else{
@@ -25,7 +28,7 @@ router.post('/add-users', function (req, res){
 			}
 
 	});
-})
+});
 
 
 module.exports = router;
