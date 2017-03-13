@@ -8,13 +8,21 @@ router.post('/add-users', function (req, res){
 
 	file.read(function(data){
 		var params = req.query;
+		var id=0;
+		id= data.length + 1;
 		var naorepete=file.check(params, data)
-		
-		Object.defineProperty(obj, "id", {
-  			get: function () { return id; },
-  			set: function (value) { id = value; },
- 			 enumerable: true
-			});
+
+			Object.defineProperty(params, "id", {
+ 				get: function (){ 
+ 					return id;
+ 				 },
+
+  				set: function (value){ 
+  					id = value;
+  				},
+
+  				enumerable: true
+			});		
 
 			if(naorepete==0){
 				data.push(params);
